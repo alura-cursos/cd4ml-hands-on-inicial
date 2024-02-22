@@ -40,7 +40,7 @@ def get_feature_importance_linear_model(trained_model, encoder, print_features=T
 def get_feature_importance(trained_model, model_name, encoder, print_features=True):
     if model_name in ['random_forest', 'gradient_boosting', 'adaboost']:
         return get_feature_importance_emsemble(trained_model, encoder, print_features=print_features)
-    elif model_name in ['ridge', 'lasso']:
+    elif model_name in ['ridge', 'lasso', 'logistic_regression']:
         return get_feature_importance_linear_model(trained_model, encoder, print_features=print_features)
     else:
         return None

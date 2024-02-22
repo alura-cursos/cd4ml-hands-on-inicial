@@ -60,7 +60,11 @@ def _get_problem_file_templates(raw_problem_data_dir):
         },
         'iris': {
             'raw_iris_data': '%s/iris.csv' % raw_problem_data_dir
+        },
+        'titanic': {
+            'raw_titanic_data': '%s/train.csv' % raw_problem_data_dir
         }
+
     }
 
     return file_names_problem

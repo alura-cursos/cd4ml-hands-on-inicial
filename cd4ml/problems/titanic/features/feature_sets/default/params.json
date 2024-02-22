@@ -1,0 +1,12 @@
+{
+  "feature_set_name": "default",
+  "extra_information_fields": [],
+  "base_categorical_n_levels_dict": {
+    "Sex": 2
+  },
+  "base_fields_numerical": ["Pclass", "Age", "Fare", "SibSp", "Parch"],
+  "derived_categorical_n_levels_dict": {},
+  "derived_fields_numerical": [],
+  "encoder_excluded_fields": [],
+  "encoder_untransformed_fields": []
+}

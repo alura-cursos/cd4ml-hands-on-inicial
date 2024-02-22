@@ -1,6 +1,6 @@
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor, GradientBoostingRegressor
-from sklearn.linear_model import Ridge, Lasso
+from sklearn.linear_model import Ridge, Lasso, LogisticRegression, LinearRegression
 from sklearn.ensemble import RandomForestClassifier
 
 regressor_classes = {
@@ -9,7 +9,9 @@ regressor_classes = {
         'gradient_boosting': GradientBoostingRegressor,
         'decision_tree': DecisionTreeRegressor,
         'ridge': Ridge,
-        'lasso': Lasso}
+        'lasso': Lasso,
+        'logistic_regression': LogisticRegression,
+        'linear_regression': LinearRegression}
 
 classifier_classes = {'random_forest_classifier': RandomForestClassifier}
 

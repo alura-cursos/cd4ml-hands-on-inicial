@@ -1,4 +1,4 @@
 {
-    "n_estimators": 5,
+    "n_estimators": 7,
     "max_features": 0.4
 }
