@@ -1,27 +1,110 @@
 <!doctype html>
 <html lang="en">
-    {% set title = 'Welcome to the CD4ML Scenario Picker' %}
+<head>
+    {% set title = 'CD4ML Santader' %}
     {% include "partials/_head.html" %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('/static/model.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 70px; /* Space for fixed navbar */
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #fff;
+        }
+        p {
+            color: #ccc;
+        }
+        .btn-primary {
+            background-color: #e60000;
+            border-color: #e60000;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #b30000;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #565e64;
+            transform: scale(1.05);
+        }
+        .card {
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            transition: transform 0.3s;
+            color: #000;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 2px solid #e60000;
+        }
+        .card-title {
+            color: #000;
+            font-size: 1.5rem;
+            margin-top: 15px;
+        }
+        .card-text {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
     {% include "partials/_navbar.html" %}
-    <body>
-        <div class="container">
-            <div class="row"><h2>Welcome! Select the scenario you want to try!</h2></div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <img class="mx-auto d-block" src="/static/groceries.png" alt="Groceries Scenario Image" width="200" height="200">
-                  <h2>Sales Forecasting Scenario</h2>
-                  <p>Predict the amount of a product required to order on a particular date</p>
-                  <p><a class="btn btn-primary" href="/groceries/latest" role="button">Use latest valid model »</a></p>
-                  <p><a class="btn btn-secondary" href="/groceries/models" role="button">View All Models »</a></p>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="/static/mercadocarro.jpg" alt="Car Sales Icon">
+                    <div class="card-body">
+                        <h2 class="card-title">Cenário de previsão de vendas</h2>
+                        <p class="card-text">Preveja a quantidade de venda de veículos em uma data específica</p>
+                        <a class="btn btn-primary" href="/groceries/latest" role="button">Use o modelo válido mais recente »</a>
+                        <a class="btn btn-secondary" href="/groceries/models" role="button">Ver todos os modelos »</a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                  <img class="mx-auto d-block" src="/static/houses.png" alt="Houses Scenario Image" width="200" height="200">
-                  <h2>Housing Price Prediction Scenario</h2>
-                  <p>Prediction the difference between the actual price of a house and the suggested price</p>
-                  <p><a class="btn btn-primary" href="/houses/latest" role="button">Use latest valid model »</a></p>
-                  <p><a class="btn btn-secondary" href="/houses/models" role="button">View All Models »</a></p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="/static/carro.jpg" alt="Houses Scenario Image">
+                    <div class="card-body">
+                        <h2 class="card-title">Previsão de preços de carros</h2>
+                        <p class="card-text">Preveja a diferença entre o preço real de um carro e o preço sugerido</p>
+                        <a class="btn btn-primary" href="/houses/latest" role="button">Use o modelo válido mais recente »</a>
+                        <a class="btn btn-secondary" href="/houses/models" role="button">Ver todos os modelos »</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
-    </body>
+    </div>
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
 </html>

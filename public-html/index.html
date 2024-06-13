@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< Updated upstream
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
@@ -58,5 +59,512 @@
         </ul>
     </div>
 </div>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Model</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+        }
+
+        nav ul,
+        nav ul li {
+            outline: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+        body {
+            font-family: "Nunito", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('fundo.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* MAIN MENU */
+
+        main {
+            display: grid;
+            grid-template-columns: 13% 87%;
+            width: 90%;
+            margin: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0.5px 0 1px rgba(0, 0, 0, 0.23) inset,
+                        0 1px 0 0 rgba(0, 0, 0, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+            border-radius: 15px;
+            z-index: 10;
+        }
+
+        .main-menu {
+            overflow: hidden;
+            background: #ff0000; /* Cor do Santander */
+            padding-top: 10px;
+            border-radius: 15px 0 0 15px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .main-menu h1 {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+            margin: 20px 0 30px;
+            color: #fff;
+            font-family: "Nunito", sans-serif;
+        }
+
+        .logo {
+            display: block;
+            width: 50px;
+            margin: 0 auto 30px;
+        }
+
+        .nav-item {
+            position: relative;
+            display: block;
+        }
+
+        .nav-item a {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+            padding: 15px 0;
+            margin-left: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-item a:hover {
+            background: #e60000; /* Tom mais escuro de vermelho */
+            color: #fff;
+        }
+
+        .nav-item.active a {
+            text-decoration: none;
+            color: #000;
+            background: #fff;
+            border-left: 4px solid #ff0000; /* Borda para destacar a seleção */
+        }
+
+        .nav-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .nav-text {
+            display: block;
+            width: 120px;
+            height: 20px;
+        }
+
+        /* CONTENT */
+
+        .content {
+            display: grid;
+            grid-template-columns: 75% 25%;
+            padding: 20px;
+        }
+
+        /* LEFT CONTENT */
+
+        .left-content {
+            display: grid;
+            grid-template-rows: 50% 50%;
+            background: #f6f7fb;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* ACTIVITIES */
+
+        .activities h1 {
+            margin: 0 0 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .activity-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 150px);
+            column-gap: 10px;
+        }
+
+        .image-container {
+            position: relative;
+            margin-bottom: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+            border-radius: 10px;
+            transition: all 0.6s linear;
+        }
+
+        .image-container:hover .overlay {
+            opacity: 0;
+        }
+
+        .overlay h3 {
+            margin-bottom: 8px;
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        .overlay button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .overlay button:hover {
+            background-color: #cc0000;
+        }
+
+        /* USER INFO */
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #ff0000;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .user-info img {
+            width: 40px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-info h4 {
+            font-size: 1.1rem;
+            margin-left: 10px;
+        }
+
+        /* ACTIVE CALORIES  */
+
+        .active-calories {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffe6e6;
+            padding: 10px;
+            margin: 15px 10px 0;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+        }
+
+        .active-calories h1 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #ff0000;
+        }
+
+        .active-calories-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .box h2 {
+            position: relative;
+            text-align: center;
+            font-size: 1.25rem;
+            color: rgb(91, 95, 111);
+            font-weight: 600;
+        }
+
+        .box h2 small {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .circle {
+            position: relative;
+            width: 80px;
+            aspect-ratio: 1/1;
+            background: conic-gradient(
+                from 0deg,
+                #ff0000 0%,
+                #ff0000 0% var(--i),
+                #b3b2b2 var(--i),
+                #b3b2b2 100%
+            );
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle::before {
+            content: "";
+            position: absolute;
+            inset: 10px;
+            background-color: #ffe6e6;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav class="main-menu">
+            <h1>Santander</h1>
+            <img class="logo" src="santander.gif" alt="Santander" />
+            <ul>
+                <li class="nav-item active">
+                    <a href="#">
+                        <i class="fa fa-house nav-icon"></i>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-user nav-icon"></i>
+                        <span class="nav-text">Perfil</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-calendar-check nav-icon"></i>
+                        <span class="nav-text">Agenda</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-person-running nav-icon"></i>
+                        <span class="nav-text">Atividades</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-sliders nav-icon"></i>
+                        <span class="nav-text">Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="content">
+            <div class="left-content">
+                <div class="activities">
+                    <h1>Principais Atividades</h1>
+                    <div class="activity-container">
+                        <div class="image-container img-one">
+                            <img src="git_hub.png" alt="GIT" />
+                            <div class="overlay">
+                                <a href="https://github.com/Igorgil-87/cd4ml-hands-on-inicial/blob/master/Jenkinsfile" target="_blank">
+                                    <button>GIT</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-two">
+                            <img src="docker-svgrepo-com.svg" alt="DOCKER" />
+                            <div class="overlay">
+                                <a href="http://localhost:10000/blu" target="_blank">
+                                    <button>Infra</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-three">
+                            <img src="monitor.png" alt="Monitoring" />
+                            <div class="overlay">
+                                <a href="http://localhost:5601" target="_blank">
+                                    <button>Monitor</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-four">
+                            <img src="mlflow.png" alt="Modelo"/>
+                            <div class="overlay">
+                                <a href="http://localhost:12000" target="_blank">
+                                    <button>Modelo</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-five">
+                            <img src="storage.jpeg" alt="DATA STORAGE" />
+                            <div class="overlay">
+                                <a href="http://localhost:9000" target="_blank">
+                                    <button>Storage</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-six">
+                            <img src="cicd.jpeg" alt="CI/CD"/>
+                            <div class="overlay">
+                                <a href="http://localhost:10000/blu" target="_blank">
+                                    <button>CICD</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-seven">
+                            <img src="jupyter.png" alt="Jupyter"/>
+                            <div class="overlay">
+                                <a href="http://localhost:8888" target="_blank">
+                                    <button>Notebook</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-eight">
+                            <img src="data-science-solid-svgrepo-com.svg" alt="Data Science"/>
+                            <div class="overlay">
+                                <a href="http://localhost:11000" target="_blank">
+                                    <button>ML Model</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-nine">
+                            <img src="alerta.png" alt="Data Science"/>
+                            <div class="overlay">
+                                <a href="http://localhost:11000" target="_blank">
+                                    <button>Alertas</button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="image-container img-ten">
+                            <img src="gpu.png" alt="Data Science"/>
+                            <div class="overlay">
+                                <a href="http://localhost:11000" target="_blank">
+                                    <button>Uso GPU</button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-content">
+                <div class="user-info">
+                    <img src="linkedin.jpeg" alt="user" />
+                    <h4>Igor Gil</h4>
+                </div>
+
+                <div class="active-calories">
+                    <h1 style="align-self: flex-start">Data Drift</h1>
+                    <div class="active-calories-container">
+                        <div class="box" style="--i: 85%">
+                            <div class="circle">
+                                <h2>85<small>%</small></h2>
+                            </div>
+                        </div>
+                        <div class="calories-content">
+                            <p><span>Volume Total:</span> 4000</p>
+                            <p><span>Treino:</span> 3500</p>
+                            <p><span>Teste:</span> 14000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="active-calories">
+                    <h1 style="align-self: flex-start">Drift de Performance</h1>
+                    <div class="active-calories-container">
+                        <div class="box" style="--i: 85%">
+                            <div class="circle">
+                                <h2>85<small>%</small></h2>
+                            </div>
+                        </div>
+                        <div class="calories-content">
+                            <p><span>Volume Total:</span> 4000</p>
+                            <p><span>Treino:</span> 3500</p>
+                            <p><span>Teste:</span> 14000</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const navItems = document.querySelectorAll(".nav-item");
+
+        navItems.forEach((navItem, i) => {
+            navItem.addEventListener("click", () => {
+                navItems.forEach((item, j) => {
+                    item.className = "nav-item";
+                });
+                navItem.className = "nav-item active";
+            });
+        });
+    </script>
+>>>>>>> Stashed changes
 </body>
 </html>
