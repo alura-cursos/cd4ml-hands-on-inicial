@@ -1,30 +1,32 @@
-<!-- Image and text -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="/">
-    <img src="/static/thoughtworks.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    <img src="/static/santander.gif" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     CD4ML
   </a>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Groceries
+          Previsão de Vendas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/groceries/models">All Models</a>
-          <a class="dropdown-item" href="/groceries/latest">Latest Model</a>
+          <a class="dropdown-item" href="/groceries/models">Todos os Modelos</a>
+          <a class="dropdown-item" href="/groceries/latest">Modelo Mais Recente</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Housing
+          Previsão de Preços
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/houses/models">All Models</a>
-          <a class="dropdown-item" href="/houses/latest">Latest Model</a>
+          <a class="dropdown-item" href="/houses/models">Todos os Modelos</a>
+          <a class="dropdown-item" href="/houses/latest">Modelo Mais Recente</a>
         </div>
       </li>
     </ul>
