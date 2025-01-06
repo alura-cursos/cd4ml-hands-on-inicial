@@ -1,7 +1,7 @@
-FROM jenkins/jenkins:2.347-jdk11
+FROM jenkins/jenkins:2.426.3
 
 USER jenkins
-RUN jenkins-plugin-cli --plugins blueocean:1.25.5 build-timestamp:1.0.3 timestamper:1.17 pollscm:1.3.1 github-api:1.303-400.v35c2d8258028
+RUN jenkins-plugin-cli --plugins blueocean:1.25.5 build-timestamp:1.0.3 timestamper:1.17 pollscm:1.3.1 github-api:1.318-461.v7a_c09c9fa_d63
 
 USER root
 ENV FLUENTD_HOST "fluentd"
@@ -13,9 +13,37 @@ ENV SECRET_KEY ${SECRET_KEY}
 
 COPY ./requirements.txt requirements.txt
 
-RUN apt update && \
-    apt install -y python3 python3-pip
-RUN pip3 install -r requirements.txt
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        wget \
+        libssl-dev \
+        zlib1g-dev \
+        libncurses5-dev \
+        libnss3-dev \
+        libsqlite3-dev \
+        libreadline-dev \
+        libffi-dev \
+        curl \
+        libbz2-dev && \
+    wget https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz && \
+    tar -xf Python-3.10.12.tgz && \
+    cd Python-3.10.12 && \
+    ./configure --enable-optimizations && \
+    make -j$(nproc) && \
+    make altinstall && \
+    cd .. && \
+    rm -rf Python-3.10.12.tgz Python-3.10.12 && \
+    python3.10 -m ensurepip && \
+    python3.10 -m pip install --upgrade pip && \
+    python3.10 -m pip install virtualenv && \
+    python3.10 -m virtualenv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip && \
+    /opt/venv/bin/pip install -r requirements.txt && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV PATH="/opt/venv/bin:$PATH"
 
 COPY jenkins/1-configureJenkins.groovy /usr/share/jenkins/ref/init.groovy.d/1-configureJenkins.groovy
 COPY jenkins/2-addAccessKeys.groovy /usr/share/jenkins/ref/init.groovy.d/2-addAccessKeys.groovy
